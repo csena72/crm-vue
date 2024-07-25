@@ -1,14 +1,40 @@
 {
-    "clientes": [
-        {
-            "id": 1,
-            "nombre": "Juan",
-            "apellido": "Perez"
-        },
-        {
-            "id": 2,
-            "nombre": "Maria",
-            "apellido": "Lopez"
-        }
-    ]
+  "clientes": [
+    {
+      "id": "ec18",
+      "nombre": "Cristian",
+      "apellido": "Zero",
+      "email": "cris@example.com",
+      "telefono": "11 2288 5555",
+      "empresa": "Google",
+      "puesto": "CEO"
+    },
+    {
+      "id": "643c",
+      "nombre": "Han",
+      "apellido": "Solo",
+      "email": "han@example.com",
+      "telefono": "11 2222 3333",
+      "empresa": "Disney",
+      "puesto": "Personaje"
+    },
+    {
+      "id": "4cd0",
+      "nombre": "Mona",
+      "apellido": "Lisa",
+      "email": "mona@example.com",
+      "telefono": "11 2345 6754",
+      "empresa": "X",
+      "puesto": "Administrativa"
+    },
+    {
+      "id": "6c3f",
+      "nombre": "Alberto",
+      "apellido": "Olmedo",
+      "email": "albert@example.com",
+      "telefono": "11 2345 6789",
+      "empresa": "No toca botón",
+      "puesto": "Rucucu"
+    }
+  ]
 }
