@@ -1,15 +1,6 @@
 {
   "clientes": [
     {
-      "id": "ec18",
-      "nombre": "Cristian",
-      "apellido": "Zero",
-      "email": "cris@example.com",
-      "telefono": "11 2288 5555",
-      "empresa": "Google",
-      "puesto": "CEO"
-    },
-    {
       "id": "643c",
       "nombre": "Han",
       "apellido": "Solo",
@@ -35,6 +26,15 @@
       "telefono": "11 2345 6789",
       "empresa": "No toca botón",
       "puesto": "Rucucu"
+    },
+    {
+      "id": "93ba",
+      "nombre": "Julio",
+      "apellido": "Verne",
+      "email": "julioV@example.com",
+      "telefono": "11 2222 3333",
+      "empresa": "Verne",
+      "puesto": "Escritor"
     }
   ]
 }

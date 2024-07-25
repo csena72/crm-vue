@@ -1,7 +1,7 @@
 <script setup>
 import { useRouter } from 'vue-router'
-import axios from 'axios'
 import { FormKit } from '@formkit/vue'
+import ClienteService from '../services/ClienteService'
 import RouterLink from '../components/UI/RouterLink.vue'
 import Heading from '../components/UI/Heading.vue'
 
@@ -17,10 +17,8 @@ defineProps({
 const formData = {}
 
 const handleSubmit = (data) => {
-    axios
-        .post('http://localhost:4000/clientes', data)
+    ClienteService.agregarCliente(data)
         .then(({data}) => {
-            console.log(data)
             router.push({ name: 'inicio' })
         })
         .catch(error => console.log('Hubo un error', error))
