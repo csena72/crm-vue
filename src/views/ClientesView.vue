@@ -31,7 +31,7 @@ const existenClientes = computed(() => clientes.value.length > 0)
             <RouterLink to="agregar-cliente">{{ title }}</RouterLink>
         </div>
 
-        <Heading>{{ title }}</Heading>
+        <Heading>Listado de Clientes</Heading>
 
         <div v-if="existenClientes" class="flow-root mx-auto  mt-10 p-5 bg-white shadow">
             <div class="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">

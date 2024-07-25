@@ -11,6 +11,8 @@ const props = defineProps({
 
 const nombreCliente = computed(() => `${props.cliente.nombre} ${props.cliente.apellido}`)
 
+const estadoCliente = computed(() => props.cliente.estado === 1 ? 'Activo' : 'Inactivo')
+
 </script>
 
 <template>
@@ -24,11 +26,16 @@ const nombreCliente = computed(() => `${props.cliente.nombre} ${props.cliente.ap
             <p class="text-gray-600">{{ cliente.puesto }}</p>
         </td>
         <td class="whitespace-nowrap px-3 py-4 text-sm">
-
+            <button
+                class="inline-flex items-center rounded-full bg-green-100 px-2 py-1 text-xs font-semibold text-green-800"
+                :class="[{ 'bg-green-200': cliente.estado === 1 }, { 'bg-red-200': cliente.estado === 0 }]"
+            >
+                {{ estadoCliente }}
+            </button>
         </td>
         <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 ">
-            <RouterLink 
-                :to="`/editar-cliente/${cliente.id}`"
+            <RouterLink
+                :to="{ name: 'editar-cliente', params: { id: cliente.id } }"
                 class="text-indigo-600 hover:text-indigo-900 mr-5"
             >Editar</RouterLink>
             <button

@@ -7,16 +7,17 @@
       "email": "han@example.com",
       "telefono": "11 2222 3333",
       "empresa": "Disney",
-      "puesto": "Personaje"
+      "puesto": "Personaje",
+      "estado": 0
     },
     {
-      "id": "4cd0",
       "nombre": "Mona",
       "apellido": "Lisa",
       "email": "mona@example.com",
       "telefono": "11 2345 6754",
-      "empresa": "X",
-      "puesto": "Administrativa"
+      "empresa": "Calipso",
+      "puesto": "Administrativa",
+      "id": "4cd0"
     },
     {
       "id": "6c3f",
@@ -25,16 +26,17 @@
       "email": "albert@example.com",
       "telefono": "11 2345 6789",
       "empresa": "No toca botón",
-      "puesto": "Rucucu"
+      "puesto": "Rucucu",
+      "estado": 0
     },
     {
-      "id": "93ba",
       "nombre": "Julio",
       "apellido": "Verne",
       "email": "julioV@example.com",
-      "telefono": "11 2222 3333",
+      "telefono": "11 2345 6754",
       "empresa": "Verne",
-      "puesto": "Escritor"
+      "puesto": "Escritor",
+      "id": "ab3e"
     }
   ]
 }
