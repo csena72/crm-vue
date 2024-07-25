@@ -23,6 +23,25 @@ defineProps({
 
 const existenClientes = computed(() => clientes.value.length > 0)
 
+const actualizarEstado = (id, estado) => {
+    const nuevoEstado = estado === 1 ? 0 : 1
+    ClienteService.editarCliente(id, { estado: nuevoEstado })
+        .then(() => {
+            const index = clientes.value.findIndex(cliente => cliente.id === id)
+            clientes.value[index].estado = nuevoEstado
+        })
+        .catch(error => console.log('Hubo un error', error))
+}
+
+const eliminarCliente = (id) => {
+    ClienteService.borrarCliente(id)
+        .then(() => {
+            const index = clientes.value.findIndex(cliente => cliente.id === id)
+            clientes.value.splice(index, 1)
+        })
+        .catch(error => console.log('Hubo un error', error))
+}
+
 </script>
 
 <template>
@@ -51,6 +70,8 @@ const existenClientes = computed(() => clientes.value.length > 0)
                                 v-for="cliente in clientes" 
                                 :key="cliente.id" 
                                 :cliente="cliente"
+                                @actualizar-estado="actualizarEstado"
+                                @eliminar-cliente="eliminarCliente"
                             />
 
                         </tbody>

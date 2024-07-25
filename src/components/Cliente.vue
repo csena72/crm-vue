@@ -13,6 +13,8 @@ const nombreCliente = computed(() => `${props.cliente.nombre} ${props.cliente.ap
 
 const estadoCliente = computed(() => props.cliente.estado === 1 ? 'Activo' : 'Inactivo')
 
+defineEmits(['actualizar-estado', 'eliminar-cliente'])
+
 </script>
 
 <template>
@@ -29,6 +31,7 @@ const estadoCliente = computed(() => props.cliente.estado === 1 ? 'Activo' : 'In
             <button
                 class="inline-flex items-center rounded-full bg-green-100 px-2 py-1 text-xs font-semibold text-green-800"
                 :class="[{ 'bg-green-200': cliente.estado === 1 }, { 'bg-red-200': cliente.estado === 0 }]"
+                @click="$emit('actualizar-estado', cliente.id, cliente.estado)"
             >
                 {{ estadoCliente }}
             </button>
@@ -40,6 +43,7 @@ const estadoCliente = computed(() => props.cliente.estado === 1 ? 'Activo' : 'In
             >Editar</RouterLink>
             <button
                 class="text-red-600 hover:text-red-900"
+                @click="$emit('eliminar-cliente', cliente.id)"
             >Eliminar</button>
         </td>
     </tr>
