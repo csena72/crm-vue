@@ -15,7 +15,7 @@ export default {
     },
 
     editarCliente(id, cliente) {
-        return api.put(`/clientes/${id}`, cliente)
+        return api.patch(`/clientes/${id}`, cliente)
     },
 
     borrarCliente(id) {
