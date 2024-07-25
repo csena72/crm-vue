@@ -9,6 +9,10 @@ defineProps({
     }
 })
 
+const handleSubmit = (data) => {
+    console.log(data)
+}
+
 </script>
 
 <template>
@@ -24,6 +28,10 @@ defineProps({
             <div class="mx-auto md:w-2/3 py-10 px-6">
                 <FormKit
                     type="form"
+                    submit-label="Agregar Cliente"
+                    incomplete-message="Por favor llene todos los campos"
+                    @submit="handleSubmit"
+                    :value="formData"
                 >
 
                     <FormKit
@@ -67,13 +75,24 @@ defineProps({
                         type="text"
                         label="Teléfono"
                         name="telefono"
-                        placeholder="Telefono: ej. 11 34567890"
-                        validation="required"
+                        placeholder="Telefono: ej. 11 3456 7890"
+                        validation="?matches:/^[0-9]{2} [0-9]{4} [0-9]{4}$/"
                         validation-visibility="live"
                         :validation-messages="{ 
-                            required: '* El teléfono es obligatorio', 
-                            email: 'El teléfono debe ser un número válido'
+                            matches: 'El formato no es válido'
                         }"
+                    />
+                    <FormKit
+                        type="text"
+                        label="Empresa"
+                        name="empresa"
+                        placeholder="Empresa del Cliente"
+                    />
+                    <FormKit
+                        type="text"
+                        label="Puesto"
+                        name="puesto"
+                        placeholder="Puesto del Cliente"
                     />
 
                 </FormKit>
